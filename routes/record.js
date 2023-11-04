@@ -20,6 +20,11 @@ recordRoutes.route("/record/:address").get(async function (req, res) {
         .collection("records")
         .find(myquery).toArray();
         console.log(response)
+        if (response){
+            res.status(200).send(JSON.stringify({data: response}))
+        }
+
+        
 });
 
 // This section will help you create a new record.
